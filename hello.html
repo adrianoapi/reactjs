@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>hello with React</title>
+        <title>hello React</title>
         <meta charset="utf-8">
     </head>
     <body>
@@ -17,6 +17,19 @@
                             "Hello world!"
                             ),
                     document.getElementById("app")
+                    );
+
+            // chamada aninhada de React.DOM
+            ReactDOM.render(
+                    React.DOM.h1(
+                            {id: "my-heading"},
+                            React.DOM.span(null,
+                                    React.DOM.em(null, "Hell"),
+                                    "o"
+                                    ),
+                            " world!"
+                            ),
+                    document.getElementById('app')
                     );
         </script>
     </body>
