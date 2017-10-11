@@ -10,6 +10,14 @@
         </div>
         <script src="react/build/react.js"></script>
         <script src="react/build/react-dom.js"></script>
-        
+        <script>
+            ReactDOM.render(
+                    React.DOM.h1(
+                            {id: "my-heading"},
+                            "Hello world!"
+                            ),
+                    document.getElementById("app")
+                    );
+        </script>
     </body>
 </html>
