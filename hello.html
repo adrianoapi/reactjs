@@ -31,6 +31,32 @@
                             ),
                     document.getElementById('app')
                     );
+
+            // atributos especiais
+            ReactDOM.render(
+                    React.DOM.h1(
+                            {
+                                className: "pretty",
+                                htmlFor: "me",
+                            },
+                            "Hello world!"
+                            ),
+                    document.getElementById('app')
+                    );
+
+            ReactDOM.render(
+                    React.DOM.h1(
+                            {
+                                style: {
+                                    background: "black",
+                                    color: "white",
+                                    fontFamily: "Verdana"
+                                }
+                            },
+                            "Hello world!"
+                            ),
+                    document.getElementById('app')
+                    );
         </script>
     </body>
 </html>
