@@ -11,11 +11,13 @@
         <script src="react/build/react.js"></script>
         <script src="react/build/react-dom.js"></script>
         <script>
+            var Component = React.createClass({
+                render: function () {
+                    return React.DOM.span(null, "I'm so custom");
+                }
+            });
             ReactDOM.render(
-                    React.DOM.h1(
-                            {id: "my-heading"},
-                            "Hello world!"
-                            ),
+                    React.createElement(Component),
                     document.getElementById("app")
                     );
         </script>
