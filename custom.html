@@ -11,13 +11,13 @@
         <script src="react/build/react.js"></script>
         <script src="react/build/react-dom.js"></script>
         <script>
-            var Component = React.createClass({
+            var InjectComp = React.createClass({
                 render: function () {
-                    return React.DOM.span(null, "I'm so custom");
+                    return React.DOM.span(null, "Injetando componente");
                 }
             });
             ReactDOM.render(
-                    React.createElement(Component),
+                    React.createElement(InjectComp),
                     document.getElementById("app")
                     );
         </script>
