@@ -10,19 +10,38 @@
     <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react.js"></script>
     <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react-dom.js"></script>
     <script>
+        
+        var contacts = [
+            {key: 1, name: "Adriano A Costa", email: "sdcomputadores@gmail.com", description: "estudando"},
+            {key: 2, name: "Maria Alves", email: "maria.alves@hotmail.com"},
+            {key: 3, name: "Bob"}
+        ];
+        
+        var contactItem =  React.createClass({
+            propTypes: {
+                name:  React.PropTypes.string.isRequired,
+                email: React.PropTypes.string.isRequired,
+                descripttion: React.PropTypes.string,
+            },
+            render: function(){
+                return (
+                    React.createElement('li', {},
+                        React.createElement('h2', {}, this.props.name),
+                        React.createElement('a', {href: 'mailto:' + this.props.email}, this.props.email),
+                        React.createElement('div', {}, this.props.description)
+                    )
+                );
+            },
+        });
+        
+        var contactItemElements = contacts
+                .filter(function(contact){ return contact.email })
+                .map(function(contact){ return React.createElement(contactItem, contact)});
+        
         var rootElement =
             React.createElement('div', {},
                 React.createElement('h1', {}, "Contacts"),
-                React.createElement('ul', {},
-                    React.createElement('li', {},
-                        React.createElement('h2', {}, "Adriano A Costa"),
-                        React.createElement('a', {href: 'mailto:sdcomputadores@gmail.com'}, 'sdcomputadores@gmail.com')
-                    ),
-                    React.createElement('li', {},
-                        React.createElement('h2', {}, "Maria Alves"),
-                        React.createElement('a', {href: 'mailto:maria.alves@hotmail.com'}, 'maria.alves@hotmail.com')
-                    )
-                )
+                React.createElement('ul', {}, contactItemElements)
             );
         
         ReactDOM.render(rootElement, document.getElementById('app'));
