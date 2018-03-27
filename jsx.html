@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>propTypes</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/table.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- my app renders here -->
+        </div>
+        <script src="react/build/react.js"></script>
+        <script src="react/build/react-dom.js"></script>
+        <script src="babel/browser.js"></script>
+        <script type="text/babel">
+            
+            function formatName(user) {
+                return user.firstName + ' ' + user.lastName;
+            }
+            const user ={
+                firstName: "Adriano",
+                lastName: "Costa",
+            };
+            const element = <h1>Helo {formatName(user)}!</h1>;
+            
+            ReactDOM.render(
+                element,
+                document.getElementById('app')
+            );
+        </script>
+    </body>
+</html>
